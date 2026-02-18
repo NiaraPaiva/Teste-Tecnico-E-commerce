@@ -1,4 +1,5 @@
 type Produto = {
+  images: never;
   id: number;
   title: string;
   slug: string;
@@ -9,6 +10,7 @@ type Item = {
   id: number;
   name: string;
   slug: string;
+  image: string[];
 };
 
 export async function getProdutos() {

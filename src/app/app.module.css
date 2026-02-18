@@ -1,0 +1,16 @@
+.produtos {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem 2rem;
+  font-size: 1rem;
+}
+
+.nome-produto {
+  color: #333;
+}
+
+@media (max-width: 600px) {
+  .produtos {
+    grid-template-columns: 1fr;
+  }
+}
