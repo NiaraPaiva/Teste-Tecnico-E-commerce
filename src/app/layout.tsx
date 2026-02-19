@@ -1,22 +1,25 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Providers } from "./provider";
 import Menu from "@/components/menu";
 
 export const metadata: Metadata = {
-  title: "E-com",
-  description: "E-commerce",
+  title: "Seu título",
+  description: "Sua descrição",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="pt-br">
+    <html lang="pt-BR">
       <body>
-        <Menu />
-        {children}
+        <Providers>
+          <Menu />
+          {children}
+        </Providers>
       </body>
     </html>
   );
