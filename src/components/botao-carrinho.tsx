@@ -21,5 +21,9 @@ export default function AddToCartButton({ product }: { product: Product }) {
     });
   };
 
-  return <button onClick={handleAdd}>Adicionar ao carrinho</button>;
+  return (
+    <button aria-label="Adicionar ao carrinho" onClick={handleAdd}>
+      Adicionar ao carrinho
+    </button>
+  );
 }

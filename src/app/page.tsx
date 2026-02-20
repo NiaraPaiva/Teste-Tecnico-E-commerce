@@ -2,6 +2,12 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "./app.module.css";
 import { getProdutos } from "@/api/produtos";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Produtos",
+  description: "Pagina de todos os produtos",
+};
 
 export default async function ProdutosPage() {
   const produtos = await getProdutos();
@@ -10,7 +16,11 @@ export default async function ProdutosPage() {
       <h1 className={styles.titulo}>Produtos</h1>
       <ul className={styles.produtos}>
         {produtos.map((produto) => (
-          <li className={styles.imagem} key={produto.id}>
+          <li
+            className={styles.imagem}
+            key={produto.id}
+            aria-label="Acessar produto"
+          >
             <Link href={`produtos/${produto.id}`}>
               {produto.images?.[0]?.startsWith("http") && (
                 <Image

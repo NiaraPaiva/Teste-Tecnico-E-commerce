@@ -1,6 +1,12 @@
 import styles from "./id.module.css";
 import Image from "next/image";
 import AdicionarAoCarrinho from "@/components/adicionar-ao-carrinho";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Detalhes do produto",
+  description: "Pagina do detalhes do produto",
+};
 
 type PageParams = { params: { id: string } };
 type Produto = {

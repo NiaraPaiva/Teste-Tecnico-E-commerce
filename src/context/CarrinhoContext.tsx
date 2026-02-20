@@ -29,7 +29,6 @@ export const CarrinhoProvider = ({
 }) => {
   const [items, setItems] = useState<CartItem[]>([]);
 
-  // Carregar do localStorage ao iniciar
   useEffect(() => {
     const storedCart = localStorage.getItem("cart");
     if (storedCart) {
@@ -37,7 +36,6 @@ export const CarrinhoProvider = ({
     }
   }, []);
 
-  // Salvar no localStorage sempre que o carrinho mudar
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(items));
   }, [items]);
@@ -58,6 +56,7 @@ export const CarrinhoProvider = ({
 
   const removeItem = (id: number) => {
     setItems((prev) => prev.filter((item) => item.id !== id));
+    alert("Item removido do carrinho!");
   };
 
   const updateQuantity = (id: number, quantity: number) => {
@@ -98,7 +97,7 @@ export const CarrinhoProvider = ({
 export const useCart = () => {
   const context = useContext(CartContext);
   if (context === undefined) {
-    throw new Error("useCart must be used within a CarrinhoProvider ");
+    throw new Error("useCart precisa ser usado com CarrinhoProvider ");
   }
   return context;
 };

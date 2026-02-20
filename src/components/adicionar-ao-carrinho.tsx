@@ -23,6 +23,7 @@ export default function AdicionarAoCarrinho({
       price: produto.price,
       image: produto.image,
     });
+    alert(`Produto ${produto.title} adicionado ao carrinho!`);
   };
 
   return <button onClick={handleAdd}>Adicionar ao carrinho</button>;

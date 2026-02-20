@@ -60,6 +60,7 @@ export default function CarrinhoPage() {
                   <button
                     onClick={() => removeItem(item.id)}
                     className={styles.removeButton}
+                    aria-label="Remover produto do carrinho"
                   >
                     Remover
                   </button>
